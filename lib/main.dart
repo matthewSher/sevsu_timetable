@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sevsu_timetable_2/screens/home/home_screen.dart';
+import 'package:sevsu_timetable_2/screens/home_screen.dart';
+import 'package:sevsu_timetable_2/utils/app_colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +12,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
-        useMaterial3: true,
+        navigationBarTheme: NavigationBarThemeData(
+          indicatorColor: AppColors.primaryColor100,
+          backgroundColor: AppColors.primaryColor50,
+          iconTheme: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) {
+              return const IconThemeData(color: AppColors.primaryColor800);
+            }
+            return const IconThemeData(color: AppColors.secondaryColor600);
+          }),
+        ),
       ),
       home: const HomeScreen(),
     );
