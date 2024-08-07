@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sevsu_timetable_2/utils/app_colors.dart';
 import 'package:sevsu_timetable_2/utils/app_constants.dart';
 
 class AppNavigationBar extends StatefulWidget {
